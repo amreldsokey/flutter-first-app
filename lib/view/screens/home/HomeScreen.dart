@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
       theme: AppTheme.theme1,
       home: Scaffold(
           appBar: AppBar(
+            lo
             title: Text("Home Screen"),
           ),
           body: Container(
