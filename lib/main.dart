@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_first/view/screens/home/HomeScreen.dart';
+import 'package:flutter_app_first/view/screens/listingScreen/ListingScreen.dart';
 import 'package:flutter_app_first/view/screens/splash/SplashScreen.dart';
 import 'package:flutter_app_first/view/screens/splash/SplashScreen2.dart';
 //class MyAppBar extends StatelessWidget {
@@ -75,7 +76,7 @@ void main() {
       // When navigating to the "/" route, build the FirstScreen widget.
       '/': (context) => SplashScreen2(),
       // When navigating to the "/second" route, build the SecondScreen widget.
-      '/home': (context) => HomeScreen(),
+      '/home': (context) => ListingScreen(),
     },
   ));
 }
