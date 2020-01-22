@@ -3,6 +3,7 @@ import 'package:flutter_app_first/view/screens/home/HomeScreen.dart';
 import 'package:flutter_app_first/view/screens/listingScreen/ListingScreen.dart';
 import 'package:flutter_app_first/view/screens/splash/SplashScreen.dart';
 import 'package:flutter_app_first/view/screens/splash/SplashScreen2.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 //class MyAppBar extends StatelessWidget {
 //  MyAppBar({this.title});
 //
@@ -78,5 +79,12 @@ void main() {
       // When navigating to the "/second" route, build the SecondScreen widget.
       '/home': (context) => ListingScreen(),
     },
+    localizationsDelegates: [
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate
+    ],
+    supportedLocales: [const Locale('en', 'US'),
+      const Locale('de', 'DE'),
+      const Locale('ar', '  ')],
   ));
 }
