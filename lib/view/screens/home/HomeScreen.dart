@@ -6,7 +6,6 @@ import 'package:flutter_app_first/resource/AppColor.dart';
 import 'package:flutter_app_first/resource/AppTheme.dart';
 
 class HomeScreen extends StatefulWidget {
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -27,21 +26,23 @@ class _HomeScreenState extends State<HomeScreen> {
       theme: AppTheme.theme1,
       home: Scaffold(
           appBar: AppBar(
-            title: Text("Home Screen"),
+//            AppLocalizations.of(context).translate('first_string')
+            title: Text("amr"),
           ),
           body: Container(
               color: AppColor.ErroColor,
               height: double.infinity,
               width: double.infinity,
               child: Center(
-                child:FutureBuilder<MoviesResponse>(
+                child: FutureBuilder<MoviesResponse>(
                   future: moviesResponse,
-                  builder: (context,snapshot){
-                    if(snapshot.hasData){
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
                       return Text("value = ${snapshot.data.results[0].title}");
-                    }else{
+                    } else {
                       print("error = ${snapshot.error}");
-                      return Text("error in _HomeScreenState= ${snapshot.error}");
+                      return Text(
+                          "error in _HomeScreenState= ${snapshot.error}");
                     }
                     // By default, show a loading spinner.
                     return CircularProgressIndicator();
@@ -50,7 +51,4 @@ class _HomeScreenState extends State<HomeScreen> {
               ))),
     );
   }
-
-
 }
-

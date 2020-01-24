@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_first/view/screens/home/HomeScreen.dart';
 import 'package:flutter_app_first/view/screens/listingScreen/ListingScreen.dart';
-import 'package:flutter_app_first/view/screens/splash/SplashScreen.dart';
 import 'package:flutter_app_first/view/screens/splash/SplashScreen2.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'app_localizations.dart';
 //class MyAppBar extends StatelessWidget {
 //  MyAppBar({this.title});
 //
@@ -79,12 +79,34 @@ void main() {
       // When navigating to the "/second" route, build the SecondScreen widget.
       '/home': (context) => ListingScreen(),
     },
-    localizationsDelegates: [
-      GlobalMaterialLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate
+    // List all of the app's supported locales here
+    supportedLocales: [
+      Locale('en', 'US'),
+      Locale('sk', 'SK'),
+      Locale('ar', 'AE'),
     ],
-    supportedLocales: [const Locale('en', 'US'),
-      const Locale('de', 'DE'),
-      const Locale('ar', '  ')],
+    // These delegates make sure that the localization data for the proper language is loaded
+    localizationsDelegates: [
+      // THIS CLASS WILL BE ADDED LATER
+      // A class which loads the translations from JSON files
+      AppLocalizations.delegate,
+      // Built-in localization of basic text for Material widgets
+      GlobalMaterialLocalizations.delegate,
+      // Built-in localization for text direction LTR/RTL
+      GlobalWidgetsLocalizations.delegate,
+    ],
+    // Returns a locale which will be used by the app
+    localeResolutionCallback: (locale, supportedLocales) {
+      // Check if the current device locale is supported
+      for (var supportedLocale in supportedLocales) {
+        if (supportedLocale.languageCode == locale.languageCode &&
+            supportedLocale.countryCode == locale.countryCode) {
+          return supportedLocale;
+        }
+      }
+      // If the locale of the device is not supported, use the first one
+      // from the list (English, in this case).
+      return supportedLocales.first;
+    },
   ));
 }

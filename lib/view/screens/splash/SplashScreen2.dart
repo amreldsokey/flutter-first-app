@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_first/model/DataManger/UserDataManger.dart';
 import 'package:flutter_app_first/resource/AppColor.dart';
 import 'package:flutter_app_first/resource/AppTheme.dart';
 
@@ -48,6 +49,7 @@ class _SplashScreenState extends State<SplashScreen2> {
   @override
   void initState() {
     super.initState();
+    UserDataManger.setUserName("Amr eldsoky");
     new Future.delayed(const Duration(seconds: 3),
         () => Navigator.pushNamed(context, '/home'));
   }
