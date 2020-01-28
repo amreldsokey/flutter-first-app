@@ -18,7 +18,7 @@ class SharedPrefrencesUtils {
 
   String getData(String key) {
     // Try reading data from  key. If it doesn't exist, return null.
-    return prefs.getString(key) ?? null;
+    return prefs.getString(key) ?? "";
   }
 
   removeData(String key) {

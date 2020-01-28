@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_first/model/data/movies/MoviesResponse.dart';
-import 'package:flutter_app_first/model/service/CallingApi.dart';
+import 'package:flutter_app_first/model/NetworkApi/CallingApi.dart';
 import 'package:flutter_app_first/resource/AppColor.dart';
 import 'package:flutter_app_first/resource/AppTheme.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_first/model/DataManger/UserDataManger.dart';
 import 'package:flutter_app_first/model/data/movies/MoviesResponse.dart';
 import 'package:flutter_app_first/model/data/movies/ResultMovies.dart';
-import 'package:flutter_app_first/model/service/CallingApi.dart';
+import 'package:flutter_app_first/model/NetworkApi/CallingApi.dart';
 import 'package:flutter_app_first/resource/AppColor.dart';
 import 'package:flutter_app_first/resource/AppTheme.dart';
 
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<ListingScreen> {
   @override
   void initState() {
     super.initState();
-    moviesResponse = CallingApi().fetchMovies();
+    moviesResponse = CallingApi().getMovies();
   }
 
   @override
