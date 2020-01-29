@@ -52,6 +52,6 @@ class _SplashScreenState extends State<SplashScreen2> {
     super.initState();
     UserDataManger.setUserName("Amr eldsoky");
     new Future.delayed(const Duration(seconds: 3),
-        () => Navigator.pushNamed(context, '/home'));
+        () => Navigator.pushNamed(context, '/loginsignup'));
   }
 }

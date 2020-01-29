@@ -1,27 +1,33 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefrencesUtils {
-  SharedPreferences prefs;
+  static SharedPreferences prefs;
 
-  SharedPrefrencesUtils() {
-    _init();
+//  SharedPrefrencesUtils() {
+//    _init();
+//  }
+
+  static  _init() async {
+    if(prefs == null)
+        prefs =  await SharedPreferences.getInstance();
+
+//    return prefs;
   }
 
-  _init() async {
-    prefs = await SharedPreferences.getInstance();
-  }
-
-  setData(String key, String value) {
+  static setData(String key, String value) async {
+    await _init() ;
     // set Value
-    prefs.setString(key, value);
+     prefs.setString(key, value);
   }
 
-  String getData(String key) {
+  static String getData(String key) {
+    _init();
     // Try reading data from  key. If it doesn't exist, return null.
     return prefs.getString(key) ?? "";
   }
 
-  removeData(String key) {
+  static removeData(String key) {
+    _init();
     prefs.remove(key);
   }
 }

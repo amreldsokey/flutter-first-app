@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_first/view/screens/listingScreen/ListingScreen.dart';
+import 'package:flutter_app_first/view/screens/signin_up/signin_up.dart';
 import 'package:flutter_app_first/view/screens/splash/SplashScreen2.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -78,6 +79,7 @@ void main() {
       '/': (context) => SplashScreen2(),
       // When navigating to the "/second" route, build the SecondScreen widget.
       '/home': (context) => ListingScreen(),
+      '/loginsignup': (context) => LoginSignupPage(),
     },
     // List all of the app's supported locales here
     supportedLocales: [
